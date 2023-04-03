@@ -15,12 +15,14 @@
   justify-content: space-around;
   background-color: #f9f9f9;
   height: 110px;
+  margin-bottom: 24px;
 }
 
 .subcontainer {
   width: 80%;
   display: flex;
   align-items: center;
+  margin-left: 12px;
 }
 
 .subcontainer_item {
@@ -48,4 +50,68 @@
   border: 1px solid #ff9a2f;
   background-color: #ff9a2f;
   color: #fff;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.btn_add:hover {
+  opacity: 0.8;
+}
+
+.Card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  margin-bottom: 4px;
+  /* border: 1px solid #ff9a2f; */
+}
+
+.Card--text {
+  width: 70%;
+  margin: 0 12px;
+}
+
+.Card--text h1 {
+  color: #ff9a2f;
+}
+
+.Card--button {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Card--button__done {
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #74f15b;
+  color: #74f15b;
+  margin-right: 12px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.Card--button__delete {
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #f73535;
+  color: #f73535;
+  margin-right: 12px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.Card--text .line-through {
+  color: #757676;
+}
+
+.hide-button {
+  visibility: hidden;
 }

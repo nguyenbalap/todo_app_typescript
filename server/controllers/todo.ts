@@ -5,7 +5,7 @@ import Todo from "../models/Todo";
 async function index(req: express.Request, res: express.Response, next: express.NextFunction): Promise<void> {
     try {
         const todos: ITodo [] = await Todo.find({});
-        res.status(200).json(todos);
+        res.status(200).json({ todos });
     }
     catch (err) {
         throw err
@@ -33,9 +33,7 @@ async function edit(req: express.Request, res: express.Response, next: express.N
     try {
         const id = req.params.id;
         const body = req.body;
-        await Todo.findByIdAndUpdate(id, {
-            body
-        });
+        await Todo.findByIdAndUpdate({ _id: id }, body);
         res.status(200).json({msg: "Ok"});
     }
     catch (err) {

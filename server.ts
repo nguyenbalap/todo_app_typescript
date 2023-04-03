@@ -2,6 +2,7 @@ import express, {Express} from 'express';
 import cors from "cors";
 import mongoose from 'mongoose';
 import todo from "./server/routes/todo";
+import logger from "morgan";
 
 const mongoUrl = 'mongodb://localhost:27017/MyTodo';
 
@@ -19,6 +20,9 @@ const app: Express = express();
 const port: number = 9656;
 
 app.use(cors());
-app.use(todo);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(logger("dev"));
+app.use("/api/v1",todo);
 
 app.listen(port, () => console.log("listening on port", port));
