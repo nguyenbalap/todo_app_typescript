@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import AddTodo from "./component/AddTodo";
 import TodoItem from "./component/TodoItem";
 import { ITodo } from './types';
@@ -19,13 +19,13 @@ function App() {
     .catch((err: Error) => console.log(err))
   }
 
-  const handleSaveTodo = (form: ITodo): void => {
+  const handleSaveTodo = useCallback((form: ITodo): void => {
     addTodo(form).then(res => {
       alert("Success")
       setIsChanged(!isChanged);
     })
     .catch(err => alert("Error"));
-  }
+  }, [])
 
   const handleUpdateTodo = (form: ITodo): void => {
     updateTodo(form)

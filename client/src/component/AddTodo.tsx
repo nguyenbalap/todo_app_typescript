@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import { useState } from "react";
 import { ITodo } from "../types";
 import "../App.css";
@@ -56,4 +56,4 @@ function AddTodo({ onSaveTodo }: Props): JSX.Element {
   );
 }
 
-export default AddTodo;
+export default memo(AddTodo);
