@@ -1,10 +1,10 @@
 import axios, { AxiosResponse } from "axios";
 import { ApiDataType, ITodo } from "../types";
 
-async function getTodos(): Promise<AxiosResponse<ApiDataType>> {
+async function getTodos(): Promise<any> {
     try {
         const response: AxiosResponse<ApiDataType> = await axios.get("/api/v1");
-        return response;
+        return response.data;
     }catch (e) {
         throw new Error(e)
     }

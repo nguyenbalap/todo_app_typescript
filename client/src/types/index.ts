@@ -14,4 +14,5 @@ export interface TodoProps {
 export type ApiDataType = {
     msg: string,
     status: string,
+    todos?: ITodo [],
 }
